@@ -1,3 +1,4 @@
+from classynumbers import Switcher
 """using if/elif to emulate switch/case - also adding in other methods I am finding on the all knowing googles to help me"""
 
 def _error_messages(first, second, third):
@@ -28,14 +29,19 @@ def _success_messages(the_selection):
 active = True
 while active:
     user_choice = input("\nPlease select a number 1, 2 or 3: ")
+    thenumber = Switcher()
+    
     if user_choice.isdigit():
         user_choice = int(user_choice)
         if user_choice == 1:
             print(f"\nNice choice: {_success_messages(user_choice)}")
+            print(thenumber.indirect(1))
         elif user_choice == 2:
             print(f"\nWell done: {_success_messages(user_choice)}")
+            print(thenumber.indirect(1))
         elif user_choice == 3:
             print(f"\nSpectaculor!: {_success_messages(user_choice)}")
+            print(thenumber.indirect(1))
         else:
             _error_messages(True, False, True)
     else:
